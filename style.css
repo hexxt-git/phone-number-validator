@@ -1,15 +1,12 @@
-@font-face {
-    font-family: CaviarDreams;
-    src: url(CaviarDreams.ttf);
-  }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 body{
     background: url(./freenaturestock-1955.jpg);
     background-size: cover;
     color: #DDE;
     margin: 0px;
-    height: calc(100vh - 5px);
-    font-family: CaviarDreams;
-    backdrop-filter: blur(4px);
+    height: 100vh;
+    font-family: Roboto;
+    backdrop-filter: blur(6px) saturate(70%) brightness(85%);
 }
 #container{
     height: 100vh;
@@ -147,7 +144,12 @@ body{
     border-radius: 50%;
     margin-left: auto;
     margin-right: 10px;
-    background: linear-gradient(52deg, rgb(43, 43, 43) 0%, rgb(88, 88, 88) 60%);
+    background: #333;
+    animation-name: shot;
+    animation-duration: 10s;
+    animation-timing-function: cubic-bezier();
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
 }
 .red{
     background-color: #833;
@@ -174,7 +176,6 @@ body{
     position: fixed;
     top: 0px;
     left: 0px;
-    font-family: monospace;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,7 +208,7 @@ body{
     display:block;
     top: 0px;
     left: 0px;
-    height: 100vh;
+    height: calc(100vh - 30px);
     background-color: #18181d;
     border: solid #111 5px;
     animation-name: listSlide;
@@ -235,9 +236,11 @@ body{
 @keyframes listSlide {
     0%{
         width: 5px;
+        font-size:  0px;
     }
     100%{
         width: 400px;
+        font-size: 28px;
     }
 }
 @keyframes showSlide {
@@ -246,6 +249,17 @@ body{
     }
     100%{
         left: 430px;
+    }
+}
+@keyframes shot {
+    0%{
+        background: #333;
+    }
+    1.5%{
+        background: #FFF;
+    }
+    3%{
+        background-color: #333;
     }
 }
 
