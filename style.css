@@ -5,13 +5,11 @@
 body{
     background: url(./freenaturestock-1955.jpg);
     background-size: cover;
-    color: #EEE;
-    font-family: monospace;
-    font-weight: bold;
+    color: #DDE;
     margin: 0px;
     height: calc(100vh - 5px);
     font-family: CaviarDreams;
-    
+    backdrop-filter: blur(4px);
 }
 #container{
     height: 100vh;
@@ -19,7 +17,6 @@ body{
     justify-content: center;
     align-items: center;
     --number: 35px;
-    flex-direction: row-reverse;
 }
 #buttons{
     width: 10px;
@@ -70,14 +67,15 @@ body{
     display: grid;
     padding: 10px;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     border-radius: 5px;
+    gap: 7px;
 }
 .number{
     background-color: rgb(44, 44, 46);
     border-radius: 50%;
-    width:  60px;
-    height: 60px;
+    width:  55px;
+    height: 55px;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -100,20 +98,36 @@ body{
 #nC:hover{
     background-color: rgb(71, 167, 109);
 }
+#nC:active{
+    background-color: rgb(61, 116, 83);
+}
 #phone{
-    font-size: 40px;
-    text-align: center;
+    font-size: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
 #home{
     background-color: #DDE;
     border-radius: 50px;
     width: 100px;
-    height: 5px;
+    height: 8px;
     margin: auto;
     margin-bottom: 5px;
+}
+#home:hover{
+    background-color: #BBB;
+}
+#home:active{
+    background-color: transparent;
 }
 #top{
     border-radius: 5px;
@@ -135,3 +149,124 @@ body{
     margin-right: 10px;
     background: linear-gradient(52deg, rgb(43, 43, 43) 0%, rgb(88, 88, 88) 60%);
 }
+.red{
+    background-color: #833;
+    padding: 5px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+.green{
+    background-color: #384;
+    padding: 5px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+#showList{
+    width: 70px;
+    height: 70px;
+    background-color: #18181d;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid #111 5px;
+    border-left: none;
+    border-radius: 0px 5px 10px 0px;
+    -webkit-border-radius: 0px 5px 10px 0px;
+    -moz-border-radius: 0px 5px 10px 0px;
+    -ms-border-radius: 0px 5px 10px 0px;
+    -o-border-radius: 0px 5px 10px 0px;
+}
+#showList img{
+    filter: invert(96%);
+    -webkit-filter: invert(96%);
+    width: 90%;
+}
+#list{
+    font-size: 28px;
+    display: none;
+    padding: 10px;
+}
+#showList:hover, #showList:active{
+    animation-name: showSlide;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier();
+    animation-fill-mode: forwards;
+}
+#showList:hover #list, #showList:active #list{
+    position: fixed;
+    display:block;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    background-color: #18181d;
+    border: solid #111 5px;
+    animation-name: listSlide;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier();
+    animation-fill-mode: forwards;
+}
+#title{
+    font-weight: bolder;
+    text-align: center;
+    padding: 10px;
+    font-size: 33px;
+}
+.line{
+    width: 80%;
+    height: 2px;
+    background-color: #DDE;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+.valid{
+    padding: 5px;
+}
+@keyframes listSlide {
+    0%{
+        width: 5px;
+    }
+    100%{
+        width: 400px;
+    }
+}
+@keyframes showSlide {
+    10%{
+        left: 0px;
+    }
+    100%{
+        left: 430px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
