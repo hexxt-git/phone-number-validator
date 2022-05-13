@@ -6,7 +6,7 @@ body{
     margin: 0px;
     height: 100vh;
     font-family: Roboto;
-    backdrop-filter: blur(6px) saturate(70%) brightness(85%);
+    backdrop-filter: blur(6px) saturate(70%) brightness(75%);
 }
 #container{
     height: 100vh;
